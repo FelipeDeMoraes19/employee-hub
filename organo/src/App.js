@@ -2,6 +2,7 @@ import Banner from './componentes/Banner/banner';
 import Formulario from './componentes/Formulario';
 import { useState } from 'react'
 import Time from './componentes/Time';
+import Rodape from './componentes/Rodape';
 
 function App() {
 
@@ -48,7 +49,6 @@ function App() {
   const [colaboradores, setColaboradores] = useState([])
 
   const aoNovoColaboradorAdicionado = (colaborador) => {
-    console.log(colaborador)
     setColaboradores([...colaboradores, colaborador])
 
   }
@@ -56,6 +56,7 @@ function App() {
     <div className="App">
       <Banner />
       <Formulario times={times.map(time => time.nome)} aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)}/>
+      <Rodape />
 
       {times.map(time => <Time 
       key={time.nome} 
